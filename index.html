@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Hypercat420</title>
+  <link rel="icon" type="image/png" href="hypercat.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #000052 0%, #00c0ff 100%);
+    }
+
+    .container {
+      width: 400px;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      position: relative;
+    }
+
+    .container p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .container h1 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #4287f5;
+      color: #ffffff;
+      text-decoration: none;
+      transition: transform 0.2s ease-in-out;
+      border: none;
+      font-size: 14px;
+    }
+
+    .button:hover {
+      background-color: #2962c4;
+      transform: scale(1.05);
+    }
+
+    .small-text {
+      font-size: 12px;
+    }
+
+    .go-back {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #4CAF50;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .image-container {
+      margin-top: 20px;
+    }
+
+    .image-container img {
+      max-width: 100%;
+    }
+
+    .music-control {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: #4CAF50;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: underline;
+    }
+
+    .new-album-container {
+      margin-top: 20px;
+    }
+
+    .new-album-image {
+      margin-top: 10px;
+      max-width: 100%;
+    }
+
+    .listen-button {
+      margin-top: 10px;
+    }
+  </style>
+  <script>
+    var audio = null;
+
+    function showLinks() {
+      document.getElementById("main-content").classList.add("hidden");
+      document.getElementById("links-content").classList.remove("hidden");
+    }
+
+    function showEmails() {
+      document.getElementById("main-content").classList.add("hidden");
+      document.getElementById("email-content").classList.remove("hidden");
+    }
+
+    function showEssentials() {
+      document.getElementById("main-content").classList.add("hidden");
+      document.getElementById("essentials-content").classList.remove("hidden");
+    }
+
+    function showNewAlbum() {
+      document.getElementById("main-content").classList.add("hidden");
+      document.getElementById("new-album-content").classList.remove("hidden");
+    }
+
+    function goBack() {
+      document.getElementById("links-content").classList.add("hidden");
+      document.getElementById("email-content").classList.add("hidden");
+      document.getElementById("essentials-content").classList.add("hidden");
+      document.getElementById("new-album-content").classList.add("hidden");
+      document.getElementById("main-content").classList.remove("hidden");
+    }
+
+    function toggleMusic() {
+      if (!audio) {
+        audio = new Audio("BGM.mp3");
+      }
+
+      var musicControl = document.getElementById("music-control");
+
+      if (audio.paused) {
+        audio.play();
+        musicControl.textContent = "Pause Music";
+      } else {
+        audio.pause();
+        musicControl.textContent = "Play Music";
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container" id="main-content">
+    <h1>I'm Hypercat420</h1>
+    <div class="image-container">
+      <img src="hypercat.png" alt="Hypercat Image">
+    </div>
+    <p>Hi, you read that right, I'm Hypercat420. I make YouTube Videos, Music, and all sorts of wacky stuff. I've been a video editor for 4 years and I'm very proud of it. There's not much else to say about myself other than to check out</p>
+    <button class="button" onclick="showLinks()">Links</button>
+    <button class="button" onclick="showEmails()">Email</button>
+    <button class="button" onclick="showEssentials()">Essentials</button>
+    <button class="button" onclick="showNewAlbum()">NEW ALBUM</button>
+    <a class="button" href="https://youtube.com/@ngf" target="_blank">Plazmicant</a>
+    <span class="music-control" id="music-control" onclick="toggleMusic()">Play Music</span>
+  </div>
+
+  <div class="container hidden" id="links-content">
+    <h1>Links</h1>
+    <a class="button" href="https://www.youtube.com/@Hypercat420" target="_blank">YouTube</a>
+    <a class="button" href="https://twitter.com/Hypercat420" target="_blank">Twitter</a>
+    <a class="button" href="https://hc420.newgrounds.com" target="_blank">Newgrounds</a>
+    <a class="button" href="https://www.twitch.tv/hypercatontwitch" target="_blank">Twitch</a>
+    <a class="button" href="https://linktr.ee/hypercat420" target="_blank">Music</a>
+    <span class="go-back" onclick="goBack()">Go Back</span>
+  </div>
+
+  <div class="container hidden" id="email-content">
+    <h1>Email</h1>
+    <p>Reach out to me at:</p>
+    <p>hypercatt4200@gmail.com</p>
+    <p>hypercatsspamfolder@gmail.com</p>
+    <p>hypercat420@hotmail.com</p>
+    <span class="go-back" onclick="goBack()">Go Back</span>
+  </div>
+
+  <div class="container hidden" id="essentials-content">
+    <h1>Essentials</h1>
+    <a class="button" href="https://chatgptfunsite.neocities.org" target="_blank">ChatGPT Fun Site</a>
+    <a class="button" href="https://thecubeofreality.neocities.org" target="_blank">The Cube of Reality</a>
+    <a class="button" href="https://weezerfanalbum.carrd.co" target="_blank">Weezer Fan Album</a>
+    <a class="button" href="https://cdep.carrd.co" target="_blank">CDEP</a>
+    <a class="button" href="https://ceramandeluxe.carrd.co" target="_blank">Ceramandeluxe</a>
+    <span class="go-back" onclick="goBack()">Go Back</span>
+  </div>
+
+  <div class="container hidden" id="new-album-content">
+    <h1>NEW ALBUM: MY MIXTAPE</h1>
+    <div class="new-album-image">
+      <img src="mixtapething.png" alt="My Mixtape Image" width="400" height="400">
+    </div>
+    <div class="listen-button">
+      <a class="button" href="https://mymixtapealbum.carrd.co" target="_blank">Listen</a>
+    </div>
+    <span class="go-back" onclick="goBack()">Go Back</span>
+  </div>
+</body>
+</html>
