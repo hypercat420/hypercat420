@@ -124,6 +124,10 @@
       document.getElementById("new-album-content").classList.remove("hidden");
     }
 
+    function showFunStuff() {
+      window.location.href = "fun.html";
+    }
+
     function goBack() {
       document.getElementById("links-content").classList.add("hidden");
       document.getElementById("email-content").classList.add("hidden");
@@ -160,6 +164,7 @@
     <button class="button" onclick="showEmails()">Email</button>
     <button class="button" onclick="showEssentials()">Essentials</button>
     <button class="button" onclick="showNewAlbum()">NEW ALBUM</button>
+    <button class="button" onclick="showFunStuff()">Fun Stuff</button>
     <a class="button" href="https://youtube.com/@ngf" target="_blank">Plazmicant</a>
     <span class="music-control" id="music-control" onclick="toggleMusic()">Play Music</span>
   </div>
@@ -196,7 +201,7 @@
   <div class="container hidden" id="new-album-content">
     <h1>NEW ALBUM: MY MIXTAPE</h1>
     <div class="new-album-image">
-      <img src="mixtapething.png" alt="My Mixtape Image" width="400" height="400">
+      <img src="mixtapething.png" alt="My Mixtape Image" width="300" height="300">
     </div>
     <div class="listen-button">
       <a class="button" href="https://mymixtapealbum.carrd.co" target="_blank">Listen</a>
