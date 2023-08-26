@@ -4,7 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HC402 RECORDS</title>
+    <link rel="icon" type="image/png" href="log2.png">
     <style>
+        /* CSS for body */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            font-family: 'Roboto', sans-serif;
+        }
+
         /* CSS for header */
         header {
             background-color: #333;
@@ -16,8 +25,8 @@
         }
 
         .logo {
-            width: 50px;
-            height: 50px;
+            width: 80px;
+            height: 80px;
             background-image: url('log2.png');
             background-size: cover;
             background-repeat: no-repeat;
@@ -29,14 +38,13 @@
         }
 
         nav a {
-            color: white;
             text-decoration: none;
             margin: 0 10px;
         }
 
         /* Highlight the current page in blue */
         nav a.home {
-            color: blue;
+            color: white;
         }
 
         nav a.about {
@@ -50,20 +58,113 @@
         nav a.contact {
             color: white;
         }
+
+        /* CSS for content sections */
+        .content-section {
+            display: none;
+            color: white;
+            padding: 20px;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        /* CSS for the artist container */
+        .artist-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* CSS for each artist */
+        .artist {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .artist img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%; /* Creates a circular image */
+        }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="logo"></div>
         <nav>
-            <a class="home" href="#">Home</a>
+            <a class="home active" href="#">Home</a>
             <a class="about" href="#">About</a>
             <a class="artists" href="#">Artists</a>
             <a class="contact" href="#">Contact</a>
         </nav>
     </header>
     
-    <!-- Rest of your webpage content goes here -->
+    <!-- Content Sections -->
+    <div id="home-section" class="content-section active">
+        <h1>Welcome to HC402 RECORDS</h1>
+        <p>Take a look around</p>
+    </div>
 
+    <div id="about-section" class="content-section">
+        <h1>About HC402 RECORDS</h1>
+        <p>HC402 RECORDS was founded by <a href="https://www.youtube.com/@Hypercat420" target="_blank" rel="noopener noreferrer">Hypercat420</a>, a multi-talented artist and YouTube content creator.</p>
+        <p>Hypercat420, known for his playful approach to music-making, incorporates elements of electronic music into his work. His unapologetically fun and laid-back style has carved out a niche in the music industry. His tracks are filled with catchy hooks and infectious beats that are impossible to resist.</p>
+        <p>Influenced by artists like Justice, Hypercat420 brings his unique spin to the genre, infusing it with his signature blend of humor and creativity.</p>
+    </div>
+
+    <div id="artists-section" class="content-section">
+        <h1>Our Artists</h1>
+        <div class="artist-container">
+            <!-- Artist 1 -->
+            <div class="artist">
+                <a href="https://hypercat420.bandcamp.com" target="_blank" rel="noopener noreferrer">
+                    <img src="hc.png" alt="Hypercat420">
+                    <p>Hypercat420</p>
+                </a>
+            </div>
+            <!-- Add more artist divs for additional artists here -->
+        </div>
+    </div>
+
+    <div id="contact-section" class="content-section">
+        <h1>Contact Us</h1>
+        <p>Email: <a href="mailto:contactme@hypercat420.online">contactme@hypercat420.online</a></p>
+    </div>
+    
+    <script>
+        // JavaScript to handle menu item clicks and show/hide content
+        document.addEventListener("DOMContentLoaded", function () {
+            const navLinks = document.querySelectorAll("nav a");
+            const contentSections = document.querySelectorAll(".content-section");
+
+            navLinks.forEach((link) => {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const targetSectionId = link.getAttribute("class").split(" ")[0] + "-section";
+
+                    // Hide all content sections
+                    contentSections.forEach((section) => {
+                        section.classList.remove("active");
+                    });
+
+                    // Show the selected content section
+                    document.getElementById(targetSectionId).classList.add("active");
+
+                    // Reset text color for all menu items
+                    navLinks.forEach((navLink) => {
+                        navLink.style.color = "white";
+                    });
+
+                    // Set text color for the clicked menu item to blue
+                    link.style.color = "blue";
+                });
+            });
+        });
+    </script>
 </body>
 </html>
