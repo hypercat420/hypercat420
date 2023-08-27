@@ -112,9 +112,9 @@
 
     <div id="about-section" class="content-section">
         <h1>About HC402 RECORDS</h1>
-     <p>HC402 RECORDS is an independent record label with a passion for nurturing talent and promoting diverse musical expressions. Founded by <a href="https://www.youtube.com/@Hypercat420" target="_blank" rel="noopener noreferrer">Hypercat420</a>, a multi-talented artist and YouTube content creator, our mission is to provide a platform for emerging artists to showcase their creativity and connect with a global audience.</p>
-     <p>At HC402 RECORDS, we believe in the power of music to transcend boundaries. We welcome artists from all corners of the world, regardless of their genre or style. Whether you're a singer-songwriter, a hip-hop producer, an electronic music enthusiast, or an experimental sound creator, we are dedicated to helping you reach your full potential.</p>
-     <p>Our commitment to artists extends beyond recording and distribution. We offer a range of services, including professional audio production, music promotion, and artist development. We are here to support you every step of the way, from refining your sound to building your fan base.</p>
+        <p>HC402 RECORDS is an independent record label with a passion for nurturing talent and promoting diverse musical expressions. Founded by <a href="https://www.youtube.com/@Hypercat420" target="_blank" rel="noopener noreferrer">Hypercat420</a>, a multi-talented artist and YouTube content creator, our mission is to provide a platform for emerging artists to showcase their creativity and connect with a global audience.</p>
+        <p>At HC402 RECORDS, we believe in the power of music to transcend boundaries. We welcome artists from all corners of the world, regardless of their genre or style. Whether you're a singer-songwriter, a hip-hop producer, an electronic music enthusiast, or an experimental sound creator, we are dedicated to helping you reach your full potential.</p>
+        <p>Our commitment to artists extends beyond recording and distribution. We offer a range of services, including professional audio production, music promotion, and artist development. Our team of experienced professionals is here to support you every step of the way, from refining your sound to building your fan base.</p>
     </div>
 
     <div id="artists-section" class="content-section">
@@ -129,8 +129,8 @@
             </div>
             <div class="artist">
                 <a href="https://www.youtube.com/channel/UCsBmcCzsD0n7en-26dOgerw" target="_blank" rel="noopener noreferrer">
-                    <img src="ltu.jpg" alt="LeadusTheUnfortanate">
-                    <p>LeadusTheUnfortanate</p>
+                    <img src="ltu.jpg" alt="LeadusTheUnfortunate">
+                    <p>LeadusTheUnfortunate</p>
                 </a>
             </div>
             <div class="artist">
@@ -163,7 +163,15 @@
 
     <div id="contact-section" class="content-section">
         <h1>Contact Us</h1>
-        <p>Email: <a href="mailto:contactme@hypercat420.online">contactme@hypercat420.online</a></p>
+        <p>Thank you for your interest in HC402 RECORDS. Please feel free to reach out to us for any of the following:</p>
+        
+        <ul>
+            <li><strong>Artist Submissions:</strong> If you're an independent artist looking to join HC402 RECORDS, we'd love to hear from you. Send us your demo or portfolio for consideration.</li>
+            <li><strong>Business Inquiries:</strong> For all business-related inquiries, partnerships, or collaborations, please get in touch with us.</li>
+        </ul>
+
+        <button id="showEmailButton">Show Email</button>
+        <p id="email" style="display: none;">Email: <a href="mailto:contactme@hypercat420.online">contactme@hypercat420.online</a></p>
     </div>
     
     <script>
@@ -194,6 +202,15 @@
                     link.style.color = "blue";
                 });
             });
+        });
+
+        // JavaScript to show the email address when the button is clicked
+        const showEmailButton = document.getElementById("showEmailButton");
+        const email = document.getElementById("email");
+
+        showEmailButton.addEventListener("click", function () {
+            email.style.display = "block";
+            showEmailButton.style.display = "none";
         });
     </script>
 </body>
