@@ -40,23 +40,26 @@
         nav a {
             text-decoration: none;
             margin: 0 10px;
-        }
-
-        /* Highlight the current page in blue */
-        nav a.home {
+            position: relative; /* Added for the hover effect */
             color: white;
         }
 
-        nav a.about {
-            color: white;
+        /* Hover effect for tab options */
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: blue;
+            transform: scaleX(0); /* Initially hidden */
+            transform-origin: left;
+            transition: transform 0.3s ease;
         }
 
-        nav a.artists {
-            color: white;
-        }
-
-        nav a.contact {
-            color: white;
+        nav a:hover::after {
+            transform: scaleX(1); /* On hover, show the underline */
         }
 
         /* CSS for content sections */
@@ -70,6 +73,13 @@
             display: block;
         }
 
+        /* Custom design for the Artists tab */
+        nav a.artists {
+            background-color: transparent; /* Removed blue background */
+            font-weight: normal; /* Remove bold style */
+            color: white;
+        }
+
         /* CSS for the artist container */
         .artist-container {
             display: flex;
@@ -78,17 +88,60 @@
             align-items: center;
         }
 
-        /* CSS for each artist */
-        .artist {
+        /* CSS for each artist card */
+        .artist-card {
             text-align: center;
-            margin: 10px;
+            margin: 20px;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
         }
 
-        .artist img {
+        .artist-card:hover {
+            transform: scale(1.05);
+        }
+
+        .artist-card img {
             width: 100px;
             height: 100px;
             object-fit: cover;
-            border-radius: 50%; /* Creates a circular image */
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .artist-card p {
+            color: white;
+            font-size: 18px;
+            margin: 0;
+        }
+
+        /* Center the artist card text */
+        .artist-card-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Custom design for the Home tab */
+        .home-links {
+            margin-top: 20px;
+        }
+
+        .home-links a {
+            text-decoration: none;
+            color: white;
+            margin: 0 10px;
+            padding: 5px 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .home-links a:hover {
+            background-color: white;
+            color: black;
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -107,57 +160,88 @@
     <!-- Content Sections -->
     <div id="home-section" class="content-section active">
         <h1>Welcome to HC402 RECORDS</h1>
-        <p>Take a look around</p>
+        <p>Discover the world of independent music.</p>
+        
+        <!-- Links to Bandcamp, Twitter, and Example Page -->
+        <div class="home-links">
+            <a href="https://hc402records.bandcamp.com" target="_blank" rel="noopener noreferrer">Bandcamp</a>
+            <a href="https://twitter.com/HC402RECORDS" target="_blank" rel="noopener noreferrer">Twitter</a>
+        </div>
+        
+        <!-- Description -->
+        <p>HC402 RECORDS is your gateway to a diverse range of music from independent artists around the world. Explore our artists, listen to their tracks, and connect with them on social media.</p>
     </div>
 
-    <div id="about-section" class="content-section">
-        <h1>About HC402 RECORDS</h1>
-        <p>HC402 RECORDS is an independent record label with a passion for nurturing talent and promoting diverse musical expressions. Founded by <a href="https://www.youtube.com/@Hypercat420" target="_blank" rel="noopener noreferrer">Hypercat420</a>, a multi-talented artist and YouTube content creator, our mission is to provide a platform for emerging artists to showcase their creativity and connect with a global audience.</p>
-        <p>At HC402 RECORDS, we believe in the power of music to transcend boundaries. We welcome artists from all corners of the world, regardless of their genre or style. Whether you're a singer-songwriter, a hip-hop producer, an electronic music enthusiast, or an experimental sound creator, we are dedicated to helping you reach your full potential.</p>
-        <p>Our commitment to artists extends beyond recording and distribution. We offer a range of services, including professional audio production, music promotion, and artist development. Our team of experienced professionals is here to support you every step of the way, from refining your sound to building your fan base.</p>
+   <div id="about-section" class="content-section">
+    <h1>About HC402 RECORDS</h1>
+    <p>HC402 RECORDS is an independent record label with a passion for nurturing talent and promoting diverse musical expressions. Founded by <a href="https://www.youtube.com/@Hypercat420" target="_blank" rel="noopener noreferrer">Hypercat420</a>, a multi-talented artist and YouTube content creator, our mission is to provide a platform for emerging artists to showcase their creativity and connect with a global audience.</p>
+    <p>At HC402 RECORDS, we believe in the power of music to transcend boundaries. We welcome artists from all corners of the world, regardless of their genre or style. Whether you're a singer-songwriter, a hip-hop producer, an electronic music enthusiast, or an experimental sound creator, we are dedicated to helping you reach your full potential.</p>
+    <p>Our commitment to artists extends beyond recording and distribution. We offer a range of services, including professional audio production, music promotion, and artist development. We are here to support you every step of the way, from refining your sound to building your fan base.</p>
     </div>
 
     <div id="artists-section" class="content-section">
         <h1>Our Artists</h1>
         <div class="artist-container">
             <!-- Artist 1 -->
-            <div class="artist">
+            <div class="artist-card">
                 <a href="https://hypercat420.bandcamp.com" target="_blank" rel="noopener noreferrer">
                     <img src="hc.png" alt="Hypercat420">
-                    <p>Hypercat420</p>
+                    <div class="artist-card-text">
+                        <p>Hypercat420</p>
+                    </div>
                 </a>
             </div>
-            <div class="artist">
+            
+            <!-- Artist 2 -->
+            <div class="artist-card">
                 <a href="https://www.youtube.com/channel/UCsBmcCzsD0n7en-26dOgerw" target="_blank" rel="noopener noreferrer">
                     <img src="ltu.jpg" alt="LeadusTheUnfortunate">
-                    <p>LeadusTheUnfortunate</p>
+                    <div class="artist-card-text">
+                        <p>LeadusTheUnfortunate</p>
+                    </div>
                 </a>
             </div>
-            <div class="artist">
+
+            <!-- Artist 3 -->
+            <div class="artist-card">
                 <a href="https://www.youtube.com/channel/UCZQ6ZCMTP4_NC7QCxMBQwIw" target="_blank" rel="noopener noreferrer">
                     <img src="sk.png" alt="Skkeeduo">
-                    <p>Skkeeduo</p>
+                    <div class="artist-card-text">
+                        <p>Skkeeduo</p>
+                    </div>
                 </a>
             </div>
-            <div class="artist">
+
+            <!-- Artist 4 -->
+            <div class="artist-card">
                 <a href="https://soundcloud.com/buddy12e" target="_blank" rel="noopener noreferrer">
                     <img src="dawd.png" alt="Adam 'Buddy' Eafrati">
-                    <p>Adam 'Buddy' Eafrati</p>
+                    <div class="artist-card-text">
+                        <p>Adam 'Buddy' Eafrati</p>
+                    </div>
                 </a>
             </div>
-            <div class="artist">
+
+            <!-- Artist 5 -->
+            <div class="artist-card">
                 <a href="https://portspeed.bandcamp.com" target="_blank" rel="noopener noreferrer">
                     <img src="10.jpg" alt="Portspeed">
-                    <p>Portspeed</p>
+                    <div class="artist-card-text">
+                        <p>Portspeed</p>
+                    </div>
                 </a>
             </div>
-            <div class="artist">
+
+            <!-- Artist 6 -->
+            <div class="artist-card">
                 <a href="https://www.youtube.com/@NitropolisMusic/about" target="_blank" rel="noopener noreferrer">
                     <img src="np.png" alt="Nitropolis">
-                    <p>Nitropolis</p>
+                    <div class="artist-card-text">
+                        <p>Nitropolis</p>
+                    </div>
                 </a>
             </div>
-            <!-- Add more artist divs for additional artists here -->
+            <!-- Add more artist cards for additional artists here -->
         </div>
     </div>
 
@@ -203,14 +287,11 @@
                 });
             });
         });
-
-        // JavaScript to show the email address when the button is clicked
-        const showEmailButton = document.getElementById("showEmailButton");
-        const email = document.getElementById("email");
-
-        showEmailButton.addEventListener("click", function () {
+        
+        // JavaScript to show email on button click
+        document.getElementById("showEmailButton").addEventListener("click", function () {
+            const email = document.getElementById("email");
             email.style.display = "block";
-            showEmailButton.style.display = "none";
         });
     </script>
 </body>
