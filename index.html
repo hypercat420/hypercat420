@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HC402 RECORDS</title>
     <link rel="icon" type="image/png" href="log2.png">
-    
+
     <!-- Open Graph meta tags for sharing -->
     <meta property="og:title" content="HC402 RECORDS">
     <meta property="og:image" content="log2.png"> <!-- URL to your logo image -->
@@ -113,7 +113,7 @@
             width: 100px;
             height: 100px;
             object-fit: cover;
-            border-radius: 50%;
+            border-radius: 10px; /* Round corners for artist images */
             margin-bottom: 10px;
         }
 
@@ -149,6 +149,39 @@
             background-color: white;
             color: black;
         }
+
+        /* CSS for music section */
+        .music-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .music-item {
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .music-item:hover {
+            transform: scale(1.05);
+        }
+
+        .music-item img.album-cover {
+            width: 230px;
+            height: 230px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .music-item h2 a {
+            color: white;
+            text-decoration: none;
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
@@ -159,22 +192,22 @@
             <a class="home active" href="#">Home</a>
             <a class="about" href="#">About</a>
             <a class="artists" href="#">Artists</a>
+            <a class="music" href="#">Music</a>
             <a class="contact" href="#">Contact</a>
         </nav>
     </header>
-    
+
     <!-- Content Sections -->
     <div id="home-section" class="content-section active">
         <h1>Welcome to HC402 RECORDS</h1>
         <p>Discover the world of independent music.</p>
-        
+
         <!-- Links to Bandcamp, Twitter, and Example Page -->
         <div class="home-links">
             <a href="https://hc402records.bandcamp.com" target="_blank" rel="noopener noreferrer">Bandcamp</a>
             <a href="https://twitter.com/HC402RECORDS" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <!-- Add more links as needed -->
         </div>
-        
-        <!-- Add more links as needed -->
     </div>
 
     <div id="about-section" class="content-section">
@@ -190,7 +223,7 @@
             <!-- Artist 1 -->
             <div class="artist-card">
                 <a href="https://hypercat420.bandcamp.com" target="_blank" rel="noopener noreferrer">
-                    <img src="hc.png" alt="Hypercat420">
+                    <img src="hc.png" alt="Hypercat420" class="album-cover">
                     <div class="artist-card-text">
                         <p>Hypercat420</p>
                     </div>
@@ -199,7 +232,7 @@
             <!-- Artist 2 -->
             <div class="artist-card">
                 <a href="https://www.youtube.com/channel/UCsBmcCzsD0n7en-26dOgerw" target="_blank" rel="noopener noreferrer">
-                    <img src="ltu.jpg" alt="LeadusTheUnfortunate">
+                    <img src="ltu.jpg" alt="LeadusTheUnfortunate" class="album-cover">
                     <div class="artist-card-text">
                         <p>LeadusTheUnfortunate</p>
                     </div>
@@ -208,7 +241,7 @@
             <!-- Artist 3 -->
             <div class="artist-card">
                 <a href="https://www.youtube.com/channel/UCZQ6ZCMTP4_NC7QCxMBQwIw" target="_blank" rel="noopener noreferrer">
-                    <img src="sk.png" alt="Skkeeduo">
+                    <img src="sk.png" alt="Skkeeduo" class="album-cover">
                     <div class="artist-card-text">
                         <p>Skkeeduo</p>
                     </div>
@@ -217,7 +250,7 @@
             <!-- Artist 4 -->
             <div class="artist-card">
                 <a href="https://soundcloud.com/buddy12e" target="_blank" rel="noopener noreferrer">
-                    <img src="dawd.png" alt="Adam 'Buddy' Eafrati">
+                    <img src="dawd.png" alt="Adam 'Buddy' Eafrati" class="album-cover">
                     <div class="artist-card-text">
                         <p>Adam 'Buddy' Eafrati</p>
                     </div>
@@ -226,7 +259,7 @@
             <!-- Artist 5 -->
             <div class="artist-card">
                 <a href="https://portspeed.bandcamp.com" target="_blank" rel="noopener noreferrer">
-                    <img src="10.jpg" alt="Portspeed">
+                    <img src="10.jpg" alt="Portspeed" class="album-cover">
                     <div class="artist-card-text">
                         <p>Portspeed</p>
                     </div>
@@ -235,15 +268,16 @@
             <!-- Artist 6 -->
             <div class="artist-card">
                 <a href="https://www.youtube.com/@NitropolisMusic/about" target="_blank" rel="noopener noreferrer">
-                    <img src="np.png" alt="Nitropolis">
+                    <img src="np.png" alt="Nitropolis" class="album-cover">
                     <div class="artist-card-text">
                         <p>Nitropolis</p>
                     </div>
                 </a>
             </div>
+            <!-- Artist 7 -->
             <div class="artist-card">
                 <a href="https://ntgm889cgadude.bandcamp.com" target="_blank" rel="noopener noreferrer">
-                    <img src="ntgm.png" alt="NtGm 889">
+                    <img src="ntgm.png" alt="NtGm 889" class="album-cover">
                     <div class="artist-card-text">
                         <p>NtGm 889</p>
                     </div>
@@ -253,10 +287,29 @@
         </div>
     </div>
 
+    <!-- Music section -->
+    <div id="music-section" class="content-section">
+        <h1>Current Releases</h1>
+        <div class="music-list">
+            <!-- Music 1 -->
+            <div class="music-item">
+                <img src="Ceraman Deluxe.jpg" alt="Album 1" class="album-cover">
+                <h2><a href="https://hc402records.bandcamp.com/album/ceraman-deluxe-version" target="_blank" rel="noopener noreferrer">CERAMAN "Deluxe" Version</a></h2>
+                <p>Hypercat420</p>
+            </div>
+            <!-- Music 2 -->
+            <div class="music-item">
+                <img src="remix.png" alt="Album 2" class="album-cover">
+                <h2><a href="https://hc402records.bandcamp.com/album/remixes-vol-1" target="_blank" rel="noopener noreferrer">Remixes, Vol. 1</a></h2>
+                <p>Hypercat420</p>
+            </div>
+        </div>
+    </div>
+
     <div id="contact-section" class="content-section">
         <h1>Contact Us</h1>
         <p>Thank you for your interest in HC402 RECORDS. Please feel free to reach out to us for any of the following:</p>
-        
+
         <ul>
             <li><strong>Artist Submissions:</strong> If you're an independent artist looking to join HC402 RECORDS, we'd love to hear from you. Send us your demo or portfolio for consideration.</li>
             <li><strong>Business Inquiries:</strong> For all business-related inquiries, partnerships, or collaborations, please get in touch with us.</li>
@@ -265,7 +318,7 @@
         <button id="showEmailButton">Show Email</button>
         <p id="email" style="display: none;">Email: <a href="mailto:contactme@hypercat420.online">contactme@hypercat420.online</a></p>
     </div>
-    
+
     <script>
         // JavaScript to handle menu item clicks and show/hide content
         document.addEventListener("DOMContentLoaded", function () {
@@ -295,7 +348,7 @@
                 });
             });
         });
-        
+
         // JavaScript to show email on button click
         document.getElementById("showEmailButton").addEventListener("click", function () {
             const email = document.getElementById("email");
