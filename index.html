@@ -11,6 +11,9 @@
     <meta property="og:image" content="log2.png"> <!-- URL to your logo image -->
     <meta property="og:description" content="HC402 RECORDS is an independent record label with a passion for nurturing talent and promoting diverse musical expressions.">
 
+    <!-- Google reCAPTCHA script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <style>
         /* CSS for body */
         body {
@@ -184,22 +187,25 @@
         }
 
         /* CSS for footer */
-.footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
 
         .footer a {
             text-decoration: none;
             color: white;
             margin: 0 20px;
         }
+
+        /* CSS for contact section */
+        /* ... Your contact section styles ... */
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
@@ -215,30 +221,30 @@
         </nav>
     </header>
 
-<!-- Home section -->
-<div id="home-section" class="content-section active">
-    <h1>Welcome to HC402 RECORDS</h1>
-    <p>Discover the world of independent music.</p>
+    <!-- Home section -->
+    <div id="home-section" class="content-section active">
+        <h1>Welcome to HC402 RECORDS</h1>
+        <p>Discover the world of independent music.</p>
 
-    <!-- Links to Bandcamp, Twitter, and Example Page -->
-    <div class="home-links">
-        <a href="https://hc402records.bandcamp.com" target="_blank" rel="noopener noreferrer">Bandcamp</a>
-        <a href="https://twitter.com/HC402RECORDS" target="_blank" rel="noopener noreferrer">Twitter</a>
-        <!-- Add more links as needed -->
-    </div>
+        <!-- Links to Bandcamp, Twitter, and Example Page -->
+        <div class="home-links">
+            <a href="https://hc402records.bandcamp.com" target="_blank" rel="noopener noreferrer">Bandcamp</a>
+            <a href="https://twitter.com/HC402RECORDS" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <!-- Add more links as needed -->
+        </div>
 
-    <!-- Blog Section -->
-    <div class="blog-section">
-        <h2>Latest Anoucements</h2>
-        <div class="blog-post">
-            <h3>New Release</h3>
-            <p>Date: October 10, 2023</p>
-            <p>We have released a new compilation album called "Music Collection" and <a href="https://hc402records.bandcamp.com/album/music-collection">you can listen to this on bandcamp</a> and other music streaming services.</p>
+        <!-- Blog Section -->
+        <div class="blog-section">
+            <h2>Latest Announcements</h2>
+            <div class="blog-post">
+                <h3>New Release</h3>
+                <p>Date: October 10, 2023</p>
+                <p>We have released a new compilation album called "Music Collection" and <a href="https://hc402records.bandcamp.com/album/music-collection">you can listen to this on Bandcamp</a> and other music streaming services.</p>
+            </div>
         </div>
     </div>
-</div>
 
-
+    <!-- About section -->
     <div id="about-section" class="content-section">
         <h1>About HC402 RECORDS</h1>
         <p>HC402 RECORDS is an independent record label with a passion for nurturing talent and promoting diverse musical expressions. Founded by <a href="https://www.youtube.com/@Hypercat420" target="_blank" rel="noopener noreferrer">Hypercat420</a>, a multi-talented artist and YouTube content creator, our mission is to provide a platform for emerging artists to showcase their creativity and connect with a global audience.</p>
@@ -246,6 +252,7 @@
         <p>Our commitment to artists extends beyond recording and distribution. We offer a range of services, including professional audio production, music promotion, and artist development. We are here to support you every step of the way, from refining your sound to building your fan base.</p>
     </div>
 
+    <!-- Artists section -->
     <div id="artists-section" class="content-section">
         <h1>Our Artists</h1>
         <div class="artist-container">
@@ -286,7 +293,7 @@
                 </a>
             </div>
             <!-- Artist 5 -->
-            <div class="artist-card">
+            <div class "artist-card">
                 <a href="https://portspeed.bandcamp.com" target="_blank" rel="noopener noreferrer">
                     <img src="10.jpg" alt="Portspeed" class="album-cover">
                     <div class="artist-card-text">
@@ -324,41 +331,42 @@
         </div>
     </div>
 
-<!-- Music section -->
-<div id="music-section" class="content-section">
-    <h1>Current Releases</h1>
-    <div class="music-list">
-        <!-- Music 1 -->
-        <div class="music-item">
-            <img src="Ceraman Deluxe.jpg" alt="Album 1" class="album-cover">
-            <h2><a href="https://hc402records.bandcamp.com/album/ceraman-deluxe-version" target="_blank" rel="noopener noreferrer">CERAMAN "Deluxe" Version</a></h2>
-            <p>Hypercat420</p>
-        </div>
-        <!-- Music 2 -->
-        <div class="music-item">
-            <img src="remix.png" alt="Album 2" class="album-cover">
-            <h2><a href="https://hc402records.bandcamp.com/album/remixes-vol-1" target="_blank" rel="noopener noreferrer">Remixes, Vol. 1</a></h2>
-            <p>Hypercat420</p>
-        </div>
-        <!-- Music 3 -->
-        <div class="music-item">
-            <img src="sk.png" alt="Album 3" class="album-cover">
-            <h2><a href="https://hc402records.bandcamp.com/album/meant-to-be" target="_blank" rel="noopener noreferrer">Meant To Be</a></h2>
-            <p>Skkeeduo</p>
-        </div>
-        <div class="music-item">
-            <img src="midnight.png" alt="Album 4" class="album-cover">
-            <h2><a href="https://hc402records.bandcamp.com/album/super-midnight-single" target="_blank" rel="noopener noreferrer">Super Midnight</a></h2>
-            <p>Hypercat420, Adam Eafrati</p>
-        </div>
-       <div class="music-item">
-            <img src="yeey.jpg" alt="Album 4" class="album-cover">
-            <h2><a href="https://hc402records.bandcamp.com/album/music-collection?from=twittercard" target="_blank" rel="noopener noreferrer">Music Collection</a></h2>
-            <p>HC402 RECORDS</p>
+    <!-- Music section -->
+    <div id="music-section" class="content-section">
+        <h1>Current Releases</h1>
+        <div class="music-list">
+            <!-- Music 1 -->
+            <div class="music-item">
+                <img src="Ceraman Deluxe.jpg" alt="Album 1" class="album-cover">
+                <h2><a href="https://hc402records.bandcamp.com/album/ceraman-deluxe-version" target="_blank" rel="noopener noreferrer">CERAMAN "Deluxe" Version</a></h2>
+                <p>Hypercat420</p>
+            </div>
+            <!-- Music 2 -->
+            <div class="music-item">
+                <img src="remix.png" alt="Album 2" class="album-cover">
+                <h2><a href="https://hc402records.bandcamp.com/album/remixes-vol-1" target="_blank" rel="noopener noreferrer">Remixes, Vol. 1</a></h2>
+                <p>Hypercat420</p>
+            </div>
+            <!-- Music 3 -->
+            <div class="music-item">
+                <img src="sk.png" alt="Album 3" class="album-cover">
+                <h2><a href="https://hc402records.bandcamp.com/album/meant-to-be" target="_blank" rel="noopener noreferrer">Meant To Be</a></h2>
+                <p>Skkeeduo</p>
+            </div>
+            <div class="music-item">
+                <img src="midnight.png" alt="Album 4" class="album-cover">
+                <h2><a href="https://hc402records.bandcamp.com/album/super-midnight-single" target="_blank" rel="noopener noreferrer">Super Midnight</a></h2>
+                <p>Hypercat420, Adam Eafrati</p>
+            </div>
+            <div class="music-item">
+                <img src="yeey.jpg" alt="Album 4" class="album-cover">
+                <h2><a href="https://hc402records.bandcamp.com/album/music-collection?from=twittercard" target="_blank" rel="noopener noreferrer">Music Collection</a></h2>
+                <p>HC402 RECORDS</p>
+            </div>
         </div>
     </div>
-</div>
-    
+
+    <!-- Contact section -->
     <div id="contact-section" class="content-section">
         <h1>Contact Us</h1>
         <p>Thank you for your interest in HC402 RECORDS. Please feel free to reach out to us for any of the following:</p>
@@ -368,7 +376,8 @@
             <li><strong>Business Inquiries:</strong> For all business-related inquiries, partnerships, or collaborations, please get in touch with us.</li>
         </ul>
 
-        <button id="showEmailButton">Show Email</button>
+        <div class="g-recaptcha" data-sitekey="6Le6S6koAAAAAODZYAAP01v70PDNTWxWODV-eTaw" data-callback="enableEmailDisplay"></div>
+        <button id="showEmailButton" style="display: none;">Show Email</button>
         <p id="email" style="display: none;">Email: <a href="mailto:contactme@hypercat420.online">contactme@hypercat420.online</a></p>
     </div>
 
@@ -408,10 +417,11 @@
         });
 
         // JavaScript to show email on button click
-        document.getElementById("showEmailButton").addEventListener("click", function () {
+        function enableEmailDisplay() {
             const email = document.getElementById("email");
             email.style.display = "block";
-        });
+            document.getElementById("showEmailButton").style.display = "none";
+        }
     </script>
 </body>
 </html>
