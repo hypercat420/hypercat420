@@ -213,11 +213,11 @@
     <header>
         <div class="logo"></div>
         <nav>
-            <a class="home active" href="#">Home</a>
-            <a class="about" href="#">About</a>
-            <a class="artists" href="#">Artists</a>
-            <a class="music" href="#">Music</a>
-            <a class="contact" href="#">Contact</a>
+            <a class="home active" href="#" id="home-link">Home</a>
+            <a class="about" href="#" id="about-link">About</a>
+            <a class="artists" href="#" id="artists-link">Artists</a>
+            <a class="music" href="#" id="music-link">Music</a>
+            <a class="contact" href="#" id="contact-link">Contact</a>
         </nav>
     </header>
 
@@ -231,6 +231,16 @@
             <a href="https://hc402records.bandcamp.com" target="_blank" rel="noopener noreferrer">Bandcamp</a>
             <a href="https://twitter.com/HC402RECORDS" target="_blank" rel="noopener noreferrer">Twitter</a>
             <!-- Add more links as needed -->
+        </div>
+
+        <!-- Blog Section -->
+        <div class="blog-section">
+            <h2>Latest Announcements</h2>
+            <div class="blog-post">
+                <h3>New Release</h3>
+                <p>Date: October 10, 2023</p>
+                <p>We have released a new compilation album called "Music Collection" and <a href="https://hc402records.bandcamp.com/album/music-collection">you can listen to this on Bandcamp</a> and other music streaming services.</p>
+            </div>
         </div>
     </div>
 
@@ -409,8 +419,39 @@
 
                     // Set text color for the clicked menu item to blue
                     link.style.color = "blue";
+
+                    // Update the URL in the address bar
+                    const newURL = link.getAttribute("class").split(" ")[0];
+                    history.pushState(null, null, newURL);
                 });
             });
+
+            // Function to load content based on URL
+            function loadContentFromURL() {
+                const url = window.location.href;
+                const sectionName = url.substr(url.lastIndexOf('/') + 1);
+
+                contentSections.forEach((section) => {
+                    section.classList.remove("active");
+                });
+
+                document.getElementById(sectionName + "-section").classList.add("active");
+
+                // Reset text color for all menu items
+                navLinks.forEach((navLink) => {
+                    navLink.style.color = "white";
+                });
+
+                // Set text color for the clicked menu item to blue
+                const activeLink = document.getElementById(sectionName + "-link");
+                activeLink.style.color = "blue";
+            }
+
+            // Check the URL when the page loads and load the corresponding content
+            loadContentFromURL();
+
+            // Add a listener for the popstate event (user clicking on back/forward buttons)
+            window.addEventListener('popstate', loadContentFromURL);
         });
 
         // JavaScript to show email on button click
@@ -422,3 +463,4 @@
     </script>
 </body>
 </html>
+
