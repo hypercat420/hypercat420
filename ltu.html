@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeadusTheUnfortunate</title>
+    <link rel="icon" type="image/png" href="log2.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            font-family: 'Roboto', sans-serif;
+            color: white;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background-image: url('log2.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin-left: 20px;
+        }
+
+        .back-button {
+            margin-right: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .content-box {
+            background-color: #333; /* Gray color */
+            border-radius: 20px; /* Rounded corners */
+            padding: 20px; /* Adjusted padding */
+            margin: 40px auto; /* Adjusted margin with more space from the top and centered */
+            max-width: 700px; /* Slightly increased max-width */
+        }
+
+        .artist-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px; /* Adjusted margin */
+        }
+
+        .artist-image {
+            width: 150px; /* Slightly increased size */
+            height: 150px; /* Slightly increased size */
+            object-fit: cover;
+            border-radius: 20px;
+            margin-right: 20px;
+        }
+
+        .artist-content {
+            flex: 1;
+        }
+
+        .artist-name {
+            font-size: 28px; /* Adjusted font size */
+            font-weight: bolder; /* Bolder text */
+            margin-bottom: 10px; /* Adjusted margin */
+        }
+
+        .artist-links {
+            display: flex;
+            flex-direction: column; /* Links displayed vertically */
+        }
+
+        .artist-links a {
+            text-decoration: none;
+            color: white;
+            margin: 5px 0; /* Vertical margin added */
+        }
+
+        .artist-bio {
+            font-size: 16px; /* Adjusted font size */
+        }
+
+        .artist-bio p {
+            margin-bottom: 10px; /* Adjust spacing between paragraphs */
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+        <a class="back-button" href="index.html">Back to Home</a>
+    </header>
+
+    <div class="content-box">
+        <div class="artist-container">
+            <!-- Artist Image -->
+            <img class="artist-image" src="ltu.jpg" alt="Artist Image">
+
+            <!-- Artist Content -->
+            <div class="artist-content">
+                <!-- Artist Name -->
+                <div class="artist-name">LeadusTheUnfortunate</div>
+
+                <!-- Artist Links -->
+                <div class="artist-links">
+                    <a href="https://twitter.com/leadus0272" target="_blank" rel="noopener noreferrer">Twitter</a>
+                    <a href="https://www.youtube.com/channel/UCsBmcCzsD0n7en-26dOgerw" target="_blank" rel="noopener noreferrer">YouTube</a>
+                    <!-- Add more links as needed -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Artist Bio -->
+        <div class="artist-bio">
+            <p>LeadusTheUnfortunate is a multigenere artist who likes to experiment in all sorts of musical styles.<br>
+His most notable work can be from his other project alias, Wolds Beyond Light contributing to the score of the movie "When Daylight Breaks"</p>
+        </div>
+    </div>
+</body>
+</html>
