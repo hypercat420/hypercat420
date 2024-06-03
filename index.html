@@ -33,6 +33,14 @@
         .logo {
             display: block;
             margin: 0 auto;
+            max-width: 150px; /* Scale down the images */
+            height: auto;
+        }
+
+        .hc {
+            width: 150px; /* Set desired width */
+            height: 150px; /* Set the same height for 1:1 ratio */
+            object-fit: cover; /* Ensure the image covers the element's dimensions */
         }
 
         .buttons {
@@ -45,15 +53,15 @@
             padding: 10px 20px;
             font-size: 16px;
             font-weight: bold;
-            background-color: #444;
             color: white;
+            background: none;
             border: none;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: color 0.3s;
         }
 
         .btn:hover {
-            background-color: #666;
+            color: #ccc;
         }
 
         @keyframes fadeInSlide {
